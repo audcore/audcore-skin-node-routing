@@ -43,8 +43,8 @@
   ],
   "kind": "web",
   "license": "MIT",
-  "repository": "https://github.com/audcore/audcore-skin-node",
-  "description": "节点，声核独立网页皮肤",
+  "repository": "https://github.com/audcore/audcore-skin-node-routing",
+  "description": "在画布上拖动通道节点，通过连线查看和编辑通道发送、硬件输出及侧链。",
   "build": {
     "schema": 1,
     "recipe": "web-static",

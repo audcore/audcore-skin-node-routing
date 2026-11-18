@@ -1,4 +1,4 @@
-# 节点网页皮肤 v0.1.12
+# 节点连线调音台操作说明
 
 使用 `node skin-contract/create-example-package.mjs build/声核节点皮肤-v0.1.11.skin.audcore --node` 打包，再从声核设置安装皮肤。支持多语言皮肤列表的宿主会按界面语言显示「节点」「Node」或「ノード」。设备下拉的一键创建需要支持 `channel.addNode` 的声核宿主。皮肤包中的 `preview.png` 由网页画布按 1 倍像素密度截图，尺寸为 160 × 120，供设置页皮肤卡片使用。
 
