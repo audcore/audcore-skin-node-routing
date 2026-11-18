@@ -32,7 +32,9 @@
 ```sh
 git clone https://github.com/audcore/audcore-skin-node-routing.git
 cd audcore-skin-node-routing
-node --test tools/build-package.test.mjs web/channel-chain/host-graph.test.mjs web/channel-chain/model.test.cjs
+node --test tools/build-package.test.mjs
+node --test web/channel-chain/host-graph.test.mjs
+node --test web/channel-chain/model.test.cjs
 node tools/build-package.mjs . dist
 ```
 
