@@ -1,8 +1,8 @@
-# 节点网页皮肤 v0.1.11
+# 节点网页皮肤 v0.1.12
 
 使用 `node skin-contract/create-example-package.mjs build/声核节点皮肤-v0.1.11.skin.audcore --node` 打包，再从声核设置安装皮肤。支持多语言皮肤列表的宿主会按界面语言显示「节点」「Node」或「ノード」。设备下拉的一键创建需要支持 `channel.addNode` 的声核宿主。皮肤包中的 `preview.png` 由网页画布按 1 倍像素密度截图，尺寸为 160 × 120，供设置页皮肤卡片使用。
 
-在主仓库运行 `python -m http.server 18768 --bind 127.0.0.1 --directory web`，访问 `http://127.0.0.1:18768/channel-chain/` 可独立预览。浏览器预览使用示例设备和效果器。
+独立构建与安装以 [README](README.md) 为准；模拟开发工具见 [skin-dev](https://audcore.utae.cn/skin-dev/)，不再从本体仓库启动此皮肤。下文的演示操作指模拟环境，不代表连接真实音频设备。
 
 - 首次打开没有位置记录的布局时，原始输入固定在最左列，中间节点按主路由分列。恢复已有布局时，硬件输出也会统一排到最右列，并围绕来源通道的高度错开。右键点击画布空白处，选择「自动排布」可以重新排列并保存节点位置。
 - 硬件输出使用独立底色。卡片将 `PLAYBACK` 简写为 `BACK`，悬停可查看完整名称。
@@ -23,7 +23,7 @@
 - 旁通效果器用较淡的文字和不同背景显示。通道整体旁通时，整个效果链也显示为旁通。
 - 顶部左侧的新建输入和新建输出直接展开设备列表。选中输入设备即建立输入通道，同一设备可以重复选用。选中输出设备即创建到该设备的输出总线，总线可再发送到其他输出总线或设备端点。
 - 真实通道和发送由宿主订阅提供，连线修改由宿主校验。通道加号打开原生效果器选择器。深浅色切换只出现在独立预览中，宿主皮肤跟随声核的外观设置。
-- 通道标题和端口读取宿主提供的只读 `displayColor`，出线沿用来源通道的显示色。连接多个来源的硬件输出端点采用中性色。旧宿主按相同的显示规则回退。 [皮肤显示色协议](../../skin-contract/README.md#通道显示色)
+- 通道标题和端口读取宿主提供的只读 `displayColor`，出线沿用来源通道的显示色。连接多个来源的硬件输出端点采用中性色。旧宿主按相同的显示规则回退。 [皮肤显示色协议](https://github.com/audcore/audcore-document/blob/main/docs/皮肤开发指引.md)
 - 既有的设备输出发送直接投影为输出方框和连线，显示布局无需改写工程。
 
 ## 布局记录
@@ -46,4 +46,4 @@
 | 切换时拆分 | 保留通道及插件 ID、原有发送、取样、增益和静音语义。原生直出转换成显式发送，同一端点复用输出方框。提交前校验完整图；失败留在原皮肤。切回普通皮肤时保留显式路由。 |
 | 设备拔出或插件缺失 | 按持久标识保留方框和连线，显示不可用原因。设备恢复时按原绑定重连。 |
 
-网页验证使用 `node --test web/channel-chain/model.test.cjs web/channel-chain/host-graph.test.mjs skin-contract/create-example-package.test.mjs`。
+网页验证使用 `node --test web/channel-chain/model.test.cjs web/channel-chain/host-graph.test.mjs tools/build-package.test.mjs`。
