@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>声核</title>
+  <link rel="stylesheet" href="../theme-colors.css">
+  <link rel="stylesheet" href="./chain.css">
+  <script defer src="./model.js"></script>
+  <script defer src="./layout.js"></script>
+  <script type="module" src="./chain.js"></script>
+</head>
+<body>
+  <header class="titlebar">
+    <img src="../logo-sliders.svg" width="20" height="20" alt="">
+    <strong>声核</strong>
+    <button id="host-menu" type="button" hidden><img src="../logo-sliders.svg" width="20" height="20" alt="">声核</button>
+    <button data-add="input" type="button">新建输入</button>
+    <button data-add="output" type="button">新建输出</button>
+    <div class="title-actions">
+      <button id="theme" type="button" hidden>浅色</button>
+      <button id="switch-skin" type="button">演示切换皮肤</button>
+    </div>
+    <button id="zoom" type="button" aria-label="居中并恢复 100%" title="居中并恢复 100%">100%</button>
+    <button id="settings" class="icon-button" type="button" aria-label="设置" title="设置" disabled></button>
+    <div class="window-actions">
+      <button id="window-minimize" class="icon-button" type="button" aria-label="最小化" title="最小化">−</button>
+      <button id="window-hide" class="icon-button" type="button" aria-label="隐藏" title="隐藏"></button>
+    </div>
+    <button id="window-restore" type="button" hidden>恢复窗口</button>
+  </header>
+  <main class="workspace">
+    <div class="board-scroll">
+      <div class="board" id="board" tabindex="-1">
+        <svg class="wires" id="wires">
+          <g id="route-paths"></g>
+          <path id="draft-wire" aria-hidden="true" hidden></path>
+          <g id="route-arrows" aria-hidden="true"></g>
+        </svg>
+      </div>
+    </div>
+  </main>
+  <div id="device-menu" class="device-menu" role="group" aria-label="选择设备" hidden></div>
+  <p id="status" role="status"></p>
+  <dialog id="editor" aria-labelledby="editor-title">
+    <form id="editor-form">
+      <header class="dialog-header"><h2 id="editor-title"></h2><button data-close type="button" aria-label="关闭">×</button></header>
+      <p id="editor-description" class="dialog-description"></p>
+      <div id="editor-fields"></div>
+      <div class="dialog-actions">
+        <button id="remove" data-danger type="button" hidden>删除</button>
+        <button data-close type="button">取消</button>
+        <button id="confirm" data-primary type="submit">保存</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

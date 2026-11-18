@@ -1,0 +1,76 @@
+{
+  "id": "cn.audcore.node",
+  "name": "节点",
+  "names": {
+    "zh": "节点",
+    "en": "Node",
+    "ja": "ノード"
+  },
+  "author": "Audcore",
+  "version": "0.1.12",
+  "api": {
+    "major": 1,
+    "minor": 0
+  },
+  "entry": "web/channel-chain/index.html",
+  "preview": "web/channel-chain/preview.png",
+  "window": {
+    "default": [
+      1040,
+      680
+    ],
+    "min": [
+      440,
+      260
+    ],
+    "max": null,
+    "resizable": true,
+    "maximizable": true
+  },
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "scale": {
+    "min": 1,
+    "max": 1,
+    "default": 1
+  },
+  "languages": [
+    "zh",
+    "en",
+    "ja"
+  ],
+  "kind": "web",
+  "license": "MIT",
+  "repository": "https://github.com/audcore/audcore-skin-node",
+  "description": "节点，声核独立网页皮肤",
+  "build": {
+    "schema": 1,
+    "recipe": "web-static",
+    "platform": "windows-x86_64",
+    "toolchain": {
+      "tools": {
+        "node": "24.12.0"
+      }
+    },
+    "files": [
+      "LICENSE",
+      "skin-contract/web/skin.mjs",
+      "skin-contract/web/startup.mjs",
+      "web/channel-chain/chain.css",
+      "web/channel-chain/chain.js",
+      "web/channel-chain/host-graph.mjs",
+      "web/channel-chain/index.html",
+      "web/channel-chain/labels.mjs",
+      "web/channel-chain/layout.js",
+      "web/channel-chain/model.js",
+      "web/channel-chain/preview.png",
+      "web/channel-color.mjs",
+      "web/icon-paths.mjs",
+      "web/icon-svg.mjs",
+      "web/logo-sliders.svg",
+      "web/theme-colors.css"
+    ]
+  }
+}
